@@ -42,8 +42,8 @@ const elements = {
     display: "block",
     backgroundColor: "lightgrey",
     padding: `var(--lem)`,
-    //margin: `var(--lem) 0`,
     overflowX: "auto",
+    fontSize: "50%",
 
     ["& code"]: {},
   },
