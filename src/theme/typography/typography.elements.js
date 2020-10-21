@@ -42,6 +42,10 @@ const elements = {
     display: "block",
     backgroundColor: "lightgrey",
     padding: `var(--lem)`,
+    /**
+     * Align to p+p
+     */
+    paddingLeft: `calc(var(--lem) * 6)`,
     overflowX: "auto",
     fontSize: "50%",
 
