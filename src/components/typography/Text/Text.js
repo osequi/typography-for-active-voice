@@ -81,8 +81,7 @@ const longformText = (props, theme) => {
   return {
     ...theme.typography.helpers.scale(0),
     ...theme.typography.helpers.font("Nimbus Sans Regular"),
-    ...theme.typography.helpers.maxWidth("Nimbus Sans Light"),
-    ...theme.typography.helpers.spacing("Adjacent siblings margin top"),
+    ...theme.typography.helpers.maxWidth("Nimbus Sans Regular"),
     ...theme.typography.helpers.headings(
       {
         preset: "sameSize",
@@ -93,6 +92,25 @@ const longformText = (props, theme) => {
       theme
     ),
     ...theme.typography.elements,
+
+    textTransform: "uppercase",
+
+    display: "inline",
+
+    ["& > *"]: {
+      display: "inline",
+    },
+
+    ["& p + p"]: {
+      marginLeft: `calc(var(--lem) * 3)`,
+      display: "block",
+    },
+
+    ["& h1, h2, h3, h4, h5, h6"]: {
+      border: "2px solid",
+      padding: `0 calc(var(--lem) - 3px)`,
+      marginRight: `calc(var(--lem))`,
+    },
   };
 };
 

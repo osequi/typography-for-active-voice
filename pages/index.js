@@ -9,7 +9,7 @@ const ThemeContext = createContext();
 const App = () => (
   <ThemeContext.Provider value={theme}>
     <Setup />
-    {/*<TypographicGrid />*/}
+    <TypographicGrid />
     <Text variant="longform">
       <Home />
     </Text>
