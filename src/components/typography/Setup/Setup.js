@@ -1,6 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
+/**
+ * Helmet is for CRA.
+ * import Helmet from "react-helmet";
+ */
+/**
+ * Head is for CNA.
+ */
+import Head from "next/head";
 import { cx } from "emotion";
 import { useStyles, useTheme } from "../../../hooks";
 
@@ -33,10 +40,22 @@ const defaultProps = {};
 const container = (theme) => {
   return {
     fontSize: `${theme.typography.grid.fontSizes[0]}%`,
-    lineHeight: theme.typography.grid.lineHeight,
+    lineHeight: `${theme.typography.grid.lineHeight}`,
     ...theme.typography.helpers.responsiveFontSizes,
     "--lem": `${theme.typography.helpers.lem}em`,
   };
+};
+
+const containerNextJs = (theme) => {
+  console.log("r:", theme.typography.helpers.responsiveFontSizesForCNA);
+  return `
+	body {
+		font-size: ${theme.typography.grid.fontSizes[0]}%;
+		line-height: ${theme.typography.grid.lineHeight};
+		--lem: ${theme.typography.helpers.lem}em;
+	}
+	${theme.typography.helpers.responsiveFontSizesForCNA}
+	`;
 };
 
 /**
@@ -47,13 +66,18 @@ const Setup = (props) => {
 
   /**
    * Loads the styles.
+   * This is for CRA.
+   *
+   * const { containerKlass } = useStyles([container], theme);
+   * <Helmet>
+	 <body className={cx("Body", containerKlass)} />
+   </Helmet>
    */
-  const { containerKlass } = useStyles([container], theme);
 
   return (
-    <Helmet>
-      <body className={cx("Body", containerKlass)} />
-    </Helmet>
+    <Head>
+      <style>{containerNextJs(theme)}</style>
+    </Head>
   );
 };
 
