@@ -4,20 +4,53 @@
  */
 const elements = {
   label: "Elements",
-  ["& blockquote"]: {},
+  ["& blockquote"]: {
+    display: "inline-block !important",
+    border: "4px dashed",
+    margin: `var(--lem) 0`,
+
+    ["& + p"]: {
+      //marginBottom: `var(--lem)`,
+    },
+  },
   ["& dd"]: {},
   ["& div"]: {},
   ["& dl"]: {},
   ["& dt"]: {},
   ["& figcaption"]: {},
   ["& figure"]: {},
-  ["& hr"]: {},
-  ["& li"]: {},
+  ["& hr"]: {
+    display: "block",
+    fontSize: "100%",
+  },
+  ["& li"]: {
+    display: "inline list-item",
+    marginLeft: `var(--lem)`,
+  },
   ["& main"]: {},
-  ["& ol"]: {},
+  ["& ol"]: {
+    listStylePosition: "inside",
+  },
   ["& p"]: {},
-  ["& pre"]: {},
-  ["& ul"]: {},
+  ["& code"]: {
+    /**
+     * This is both for code blocks with `pres` and inline with ticks like `HTML`
+     */
+    fontWeight: 300,
+  },
+  ["& pre"]: {
+    display: "block",
+    backgroundColor: "lightgrey",
+    padding: `var(--lem)`,
+    //margin: `var(--lem) 0`,
+    overflowX: "auto",
+
+    ["& code"]: {},
+  },
+  ["& ul"]: {
+    display: "block",
+    listStylePosition: "inside",
+  },
   ["& a "]: {},
   ["& abbr"]: {},
   ["& b"]: {},
@@ -25,7 +58,7 @@ const elements = {
   ["& bdo"]: {},
   ["& br"]: {},
   ["& cite"]: {},
-  ["& code"]: {},
+
   ["& data"]: {},
   ["& dfn"]: {},
   ["& em"]: {},

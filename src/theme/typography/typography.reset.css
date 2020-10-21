@@ -102,10 +102,9 @@ img {
 }
 
 /**
- * This fixes the hr element from breaking the grid
+ * This won't fix the hr element from breaking the grid
  */
 hr {
   border: 0;
   border: 1px solid;
-  font-size: calc(var(--lem) * 6 / 9);
 }
