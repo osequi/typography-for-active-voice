@@ -108,8 +108,7 @@ const longformText = (props, theme) => {
     ["& h1, h2, h3, h4, h5, h6"]: {
       backgroundColor: "black",
       color: "white",
-      padding: `0 calc(var(--lem))`,
-      //marginRight: `calc(var(--lem))`,
+      borderRight: "4px solid",
     },
   };
 };
