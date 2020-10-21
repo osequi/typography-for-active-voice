@@ -7,11 +7,7 @@ const elements = {
   ["& blockquote"]: {
     display: "inline-block !important",
     border: "4px dashed",
-    margin: `var(--lem) 0`,
-
-    ["& + p"]: {
-      //marginBottom: `var(--lem)`,
-    },
+    paddingLeft: `calc(var(--lem) * 2.5)`,
   },
   ["& dd"]: {},
   ["& div"]: {},
@@ -39,17 +35,15 @@ const elements = {
     fontWeight: 300,
   },
   ["& pre"]: {
-    display: "block",
-    backgroundColor: "lightgrey",
+    display: "inline-block",
     padding: `var(--lem)`,
-    /**
-     * Align to p+p
-     */
-    paddingLeft: `calc(var(--lem) * 6)`,
     overflowX: "auto",
     fontSize: "50%",
 
-    ["& code"]: {},
+    ["& code"]: {
+      textTransform: "none",
+      fontFamily: "monospace",
+    },
   },
   ["& ul"]: {
     display: "block",
