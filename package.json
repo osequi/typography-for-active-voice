@@ -22,5 +22,8 @@
     "react-helmet": "^6.1.0",
     "shortid": "^2.2.15",
     "wcag-contrast": "^3.0.0"
+  },
+  "devDependencies": {
+    "@osequi/new-component": "^1.0.0"
   }
 }
