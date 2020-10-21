@@ -7,7 +7,9 @@ const elements = {
   ["& blockquote"]: {
     display: "inline-block !important",
     border: "4px dashed",
+    margin: `var(--lem)`,
     marginLeft: `calc(var(--lem) * 3)`,
+    padding: `var(--lem)`,
   },
   ["& dd"]: {},
   ["& div"]: {},
@@ -40,9 +42,8 @@ const elements = {
   },
   ["& pre"]: {
     display: "inline-block",
-    //padding: `var(--lem)`,
+    margin: `var(--lem) 0`,
     overflowX: "auto",
-    fontSize: "50%",
   },
   ["& ul"]: {
     display: "block",
