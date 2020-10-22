@@ -7,9 +7,9 @@ const elements = {
   ["& blockquote"]: {
     display: "inline-block !important",
     border: "4px dashed",
-    margin: `var(--lem)`,
     marginLeft: `calc(var(--lem) * 3)`,
     padding: `var(--lem)`,
+    maxWidth: `calc(100% - var(--lem) * 3)`,
   },
   ["& dd"]: {},
   ["& div"]: {},
@@ -41,9 +41,15 @@ const elements = {
     fontWeight: 300,
   },
   ["& pre"]: {
-    display: "inline-block",
-    margin: `var(--lem) 0`,
+    display: "inline flow-root list-item",
     overflowX: "auto",
+    maxWidth: "100%",
+
+    ["& code"]: {
+      display: "inline flow-root list-item",
+      overflow: "auto",
+      maxWidth: "90vw",
+    },
   },
   ["& ul"]: {
     display: "block",
@@ -56,7 +62,6 @@ const elements = {
   ["& bdo"]: {},
   ["& br"]: {},
   ["& cite"]: {},
-
   ["& data"]: {},
   ["& dfn"]: {},
   ["& em"]: {},
@@ -82,7 +87,9 @@ const elements = {
   ["& wbr"]: {},
   ["& area"]: {},
   ["& audio"]: {},
-  ["& img"]: {},
+  ["& img"]: {
+    maxWidth: "100%",
+  },
   ["& map"]: {},
   ["& track"]: {},
   ["& video"]: {},

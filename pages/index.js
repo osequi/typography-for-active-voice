@@ -10,7 +10,6 @@ const ThemeContext = createContext();
 
 const container = {
   label: "Container",
-  //margin: "var(--lem) calc(var(--lem) * 4)",
 };
 
 const App = () => {
